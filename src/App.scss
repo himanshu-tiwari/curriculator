@@ -1,0 +1,113 @@
+.App {
+	padding: calc(70px + 2vw) calc(90px + 2vw);
+	font-size: 1rem;
+	position: relative;
+	min-height: 100%;
+
+    .curriculum-name {
+		margin: 0;
+		text-transform: uppercase;
+		font-size: 1.25rem;
+		letter-spacing: 0.5px;
+		color: #bcbcbc;
+		border-bottom: 2px solid #efefef;
+	}
+
+	ul.curriculum-list {
+		list-style-type: none;
+		padding-left: 0;
+		margin: 0;
+
+		li {
+			padding: 10px 0;
+			display: flex;
+			align-items: center;
+
+			&.headings {
+				border-bottom: 2px solid #efefef;
+				
+				.heading {
+					&-1, &-2 {
+						flex: 1;
+					}
+					@media(min-width: 769px) {
+						&-1 {
+							flex: 0.2;
+							margin-right: 10px;
+						}
+						&-2 {
+							flex: 0.8
+						}
+					}
+
+					.title {
+						color: #424242;
+						display: block;
+						font-weight: bold;
+						font-size: 1.071rem;
+					}
+
+					.sub-title {
+						color: #cecfd0;
+						font-weight: bold;
+						font-size: 0.928rem;
+					}
+				}
+			}
+
+			
+		}
+	}
+
+	button {
+		cursor: pointer;
+
+		&.add-btn {
+			outline: none;
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+			background-color: #337ab7;
+			color: #e4eff5;
+			font-size: 1.428rem;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			border-radius: 6px;
+			margin-top: 20px;
+	
+			svg {
+				width: 1.286rem;
+				height: 1.286rem;
+				border: 1px solid #e4eff5;
+				border-radius: 50%;
+				padding: 3px;
+				box-sizing: border-box;
+				margin-right: 5px;
+				
+				* {
+					fill: #e4eff5;
+				}
+			}
+		}
+	
+		&.side-btn {
+			outline: none;
+			background-color: transparent;
+			border: none;
+			position: fixed;
+			top: 25%;
+			right: 20px;
+			padding: 10px;
+
+			&.upload-btn {
+				top: 75%;
+			}
+	
+			svg {
+				width: 2rem;
+				height: 2rem;
+			}
+		}
+	}
+}

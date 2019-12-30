@@ -1,0 +1,105 @@
+.App ul.curriculum-list li.standard-row {
+    padding: 0;
+    border-bottom: 2px solid #efefef;
+
+    &.hidden {
+        display: none;
+    }
+    &.drag-over {
+        background-color: lightgrey;
+    }
+
+    & > span {
+        &:not(:last-of-type) {
+            margin-right: calc(10px + 1vw);
+        }
+
+        &.actions {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            flex: 0.1;
+            min-width: 100px;
+            justify-content: space-evenly;
+            align-items: center;
+
+            svg {
+                width: 17px;
+                max-width: 100%;
+                max-height: 100%;
+
+                &.reverse {
+                    transform: rotate(180deg);
+                }
+
+                * {
+                    fill: #e6eaeb !important;
+                }
+                &:hover {
+                    cursor: pointer;
+
+                    * {
+                        fill: #55c7cd !important;
+                    }
+                }
+            }
+        }
+    }
+
+    & > span.text,
+    form {
+        position: relative;
+        flex: 1;
+        padding: 12px 0 12px calc(30px + 3vw);
+        font-weight: bold;
+        word-break: break-all;
+        
+        &::before {
+            content: " ";
+            right: calc(100% - (10px + 1.5vw));
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #f7f8f8;
+        }
+    }
+    &.indent-0 > span.text {
+        color: #5dced3;
+        font-size: 1.071rem;
+    }
+    &.indent-1 > span.text {
+        color: #303030;
+        font-size: 1rem;
+    }
+    &.indent-2 > span.text {
+        color: #9d9e9f;
+        font-size: 0.928rem;
+    }
+    & > span.text.empty {
+        color: #cecfd0;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    form {
+        display: flex;
+        
+        &::before {
+            display: none;
+        }
+
+        input {
+            border: 0;
+            padding: 0;
+            flex: 1;
+            font-size: 1rem;
+            outline: none;
+
+            &::placeholder {
+                color: #cecfd0;
+                font-weight: bold;
+            }
+        }
+    }
+}
